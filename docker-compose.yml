@@ -1,0 +1,48 @@
+version: '3.4'
+
+services:
+  calculatesalaryapis:
+    image: ${DOCKER_REGISTRY-}calculatesalaryapis
+    build:
+      context: .
+      dockerfile: CalculateSalaryAPIs/Dockerfile
+    ports:
+      - "7298:443"
+      - "5262:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_HTTPS_PORT=7298
+
+  calculatesalaryapis2:
+    image: ${DOCKER_REGISTRY-}calculatesalaryapis
+    build:
+      context: .
+      dockerfile: CalculateSalaryAPIs/Dockerfile
+    ports:
+      - "8443:443"
+      - "5262:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_HTTPS_PORT=8443
+
+  calculatesalaryapis3:
+    image: ${DOCKER_REGISTRY-}calculatesalaryapis
+    build:
+      context: .
+      dockerfile: CalculateSalaryAPIs/Dockerfile
+    ports:
+      - "51607:443"
+      - "5400:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_HTTPS_PORT=51607
+
+  unittestproject:
+    image: ${DOCKER_REGISTRY-}unittestproject
+    build:
+      context: .
+      dockerfile: UnitTestProject/Dockerfile
+
