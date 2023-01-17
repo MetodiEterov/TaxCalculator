@@ -9,7 +9,7 @@ using TestTask.CommonServices;
 
 namespace TestTask.Controllers
 {
-	[Route("api/[controller]")]
+    [Route("api/[controller]")]
 	[ApiController]
 	public class TaxController : ControllerBase
 	{
@@ -37,19 +37,19 @@ namespace TestTask.Controllers
 		[ServiceFilter(typeof(ModelValidationAttribute))]
 		public IActionResult Calculate([FromBody] TaxPayer salary)
 		{
-			TaxPayerMng calulated = _calculateService.CalculatePayerTaxes(_automapper.Map<TaxPayerMng>(salary));
-			PutToCache(calulated);
+			TaxPayerMng calculated = _calculateService.CalculatePayerTaxes(_automapper.Map<TaxPayerMng>(salary));
+			PutToCache(calculated);
 
-			return Ok(_automapper.Map<TaxPayerDTO>(calulated));
+			return Ok(_automapper.Map<TaxPayerDTO>(calculated));
 		}
 
 		#endregion
 
 		#region Implementations
 
-		private void PutToCache(TaxPayerMng calulated)
+		private void PutToCache(TaxPayerMng calculated)
 		{
-			((List<TaxPayerMng>)_taxPayerCache).Add(calulated);
+			((List<TaxPayerMng>)_taxPayerCache).Add(calculated);
 			_taxMemoryCache.SetCache(_taxPayerCache);
 		}
 

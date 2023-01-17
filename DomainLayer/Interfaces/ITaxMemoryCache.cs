@@ -1,8 +1,8 @@
-﻿using DomainLayer.Entities;
+﻿using DomainLayer.DTOs;
 
 namespace DomainLayer.Interfaces
 {
-	public interface ITaxCache
+    public interface ITaxCache
 	{
 		void SetCache(IEnumerable<TaxPayerMng> taxPayers);
 

@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-
+using DomainLayer.DTOs;
 using DomainLayer.Entities;
 using DomainLayer.Interfaces;
 
 namespace ServiceLayer.Estimations
 {
-	public class CalculateService : FeesConstants, ICalculateService
+    public class CalculateService : FeesConstants, ICalculateService
 	{
 		private readonly IMapper _automapper;
 		private readonly IFeesManagement _feesManagement;
@@ -20,14 +20,14 @@ namespace ServiceLayer.Estimations
 			CheckSalaryAmount(emp);
 			switch (emp.TempIncome)
 			{
-				case var amount when amount <= TaxFreeAmount:
-					return _automapper.Map<TaxPayerMng>(emp);
-				default:
+				case var amount when amount > TaxFreeAmount:
 					emp.SocialTax = _feesManagement.GetSocialContributionsFromAmount(emp.TempIncome);
 					emp.IncomeTax = _feesManagement.GetBaseTaxFromAmount(emp.TempIncome);
 					emp.TotalTax = emp.SocialTax + emp.IncomeTax;
-					return _automapper.Map<TaxPayerMng>(emp);
+					break;
 			}
+
+			return _automapper.Map<TaxPayerMng>(emp);
 		}
 
 		private void CheckSalaryAmount(TaxPayerMng emp) => emp.TempIncome = emp.CharitySpent > _feesManagement.GetCharitySpentFromAmount(emp.GrossIncome)

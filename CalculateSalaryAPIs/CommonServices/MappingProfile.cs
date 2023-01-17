@@ -5,7 +5,7 @@ using DomainLayer.Entities;
 
 namespace TestTask.CommonServices
 {
-	public class MappingProfile : Profile
+    public class MappingProfile : Profile
 	{
 		public MappingProfile()
 		{

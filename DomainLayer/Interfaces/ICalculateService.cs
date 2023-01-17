@@ -1,4 +1,4 @@
-﻿using DomainLayer.Entities;
+﻿using DomainLayer.DTOs;
 
 namespace DomainLayer.Interfaces
 {

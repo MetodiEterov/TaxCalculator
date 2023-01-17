@@ -1,4 +1,4 @@
-﻿using DomainLayer.Entities;
+﻿using DomainLayer.DTOs;
 using DomainLayer.Interfaces;
 
 using Microsoft.Extensions.Caching.Memory;
@@ -10,7 +10,7 @@ namespace TestTask.CommonServices
 		private MemoryCacheEntryOptions _cacheExpirationOptions;
 		private const int _defaultCacheExpirationTime = 30;
 		private const string _keyEntry = "TaxPayers";
-		private IMemoryCache _memoryCache;
+		private readonly IMemoryCache _memoryCache;
 		public TaxCache(IMemoryCache memoryCache)
 		{
 			_memoryCache = memoryCache;
@@ -28,15 +28,15 @@ namespace TestTask.CommonServices
 
 				_memoryCache.Set(_keyEntry, taxPayers, _cacheExpirationOptions);
 			}
-		} 
+		}
 
 		public IEnumerable<TaxPayerMng> GetCache()
 		{
 			if (_memoryCache != null && _memoryCache.TryGetValue(_keyEntry, out IEnumerable<TaxPayerMng> taxPayers)) return taxPayers;
-			
+
 			return null;
 		}
 	}
 
-	
+
 }
