@@ -1,16 +1,17 @@
-﻿using DomainLayer.DTOs;
+﻿using DomainLayer.Entities;
 using DomainLayer.Interfaces;
 
 using Microsoft.Extensions.Caching.Memory;
 
-namespace TestTask.CommonServices
+namespace CalculateSalaryAPIs.CommonServices
 {
-	public class TaxCache : ITaxCache
+    public class TaxCache : ITaxCache
 	{
 		private MemoryCacheEntryOptions _cacheExpirationOptions;
 		private const int _defaultCacheExpirationTime = 30;
 		private const string _keyEntry = "TaxPayers";
 		private readonly IMemoryCache _memoryCache;
+
 		public TaxCache(IMemoryCache memoryCache)
 		{
 			_memoryCache = memoryCache;
@@ -32,7 +33,8 @@ namespace TestTask.CommonServices
 
 		public IEnumerable<TaxPayerMng> GetCache()
 		{
-			if (_memoryCache != null && _memoryCache.TryGetValue(_keyEntry, out IEnumerable<TaxPayerMng> taxPayers)) return taxPayers;
+			if (_memoryCache != null && _memoryCache.TryGetValue(_keyEntry, out IEnumerable<TaxPayerMng> taxPayers))
+				return taxPayers;
 
 			return null;
 		}

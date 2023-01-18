@@ -3,7 +3,7 @@
 using DomainLayer.Entities;
 using DomainLayer.Interfaces;
 
-namespace TestTask.CommonServices
+namespace CalculateSalaryAPIs.CommonServices
 {
 	public static class RegisterAppServices
 	{

@@ -5,9 +5,9 @@ using DomainLayer.Entities;
 using DomainLayer.Interfaces;
 
 using Microsoft.AspNetCore.Mvc;
-using TestTask.CommonServices;
+using CalculateSalaryAPIs.CommonServices;
 
-namespace TestTask.Controllers
+namespace CalculateSalaryAPIs.Controllers
 {
     [Route("api/[controller]")]
 	[ApiController]

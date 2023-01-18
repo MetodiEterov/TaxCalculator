@@ -1,4 +1,4 @@
-﻿namespace DomainLayer.DTOs
+﻿namespace DomainLayer.Entities
 {
     public class TaxPayerMng
     {

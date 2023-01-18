@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DomainLayer.Entities
+namespace DomainLayer.DTOs
 {
     public class TaxPayer
     {

@@ -3,7 +3,7 @@
 using DomainLayer.DTOs;
 using DomainLayer.Entities;
 
-namespace TestTask.CommonServices
+namespace CalculateSalaryAPIs.CommonServices
 {
     public class MappingProfile : Profile
 	{

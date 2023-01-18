@@ -1,4 +1,4 @@
-using TestTask.CommonServices;
+using CalculateSalaryAPIs.CommonServices;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.ConfigureAppServices();

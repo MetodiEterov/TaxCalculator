@@ -6,7 +6,7 @@ using DomainLayer.Entities;
 using DomainLayer.Interfaces;
 
 using Microsoft.Extensions.Caching.Memory;
-using TestTask.CommonServices;
+using CalculateSalaryAPIs.CommonServices;
 
 namespace UnitTestProject
 {

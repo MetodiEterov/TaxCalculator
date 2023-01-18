@@ -1,12 +1,11 @@
 using DomainLayer.DTOs;
-using DomainLayer.Entities;
 
 using Microsoft.AspNetCore.Mvc;
-using TestTask.Controllers;
+using CalculateSalaryAPIs.Controllers;
 
 namespace UnitTestProject
 {
-	[TestClass]
+    [TestClass]
 	public class CalculationTest : BaseTest
 	{
 		private TaxController _objUnderTest;

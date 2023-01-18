@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
 
-namespace TestTask.CommonServices
+namespace CalculateSalaryAPIs.CommonServices
 {
 	public class ModelValidationAttribute : ActionFilterAttribute
 	{

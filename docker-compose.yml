@@ -40,9 +40,4 @@ services:
       - ASPNETCORE_URLS=https://+:443;http://+:80
       - ASPNETCORE_HTTPS_PORT=51607
 
-  unittestproject:
-    image: ${DOCKER_REGISTRY-}unittestproject
-    build:
-      context: .
-      dockerfile: UnitTestProject/Dockerfile
 
