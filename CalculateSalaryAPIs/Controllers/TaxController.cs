@@ -18,7 +18,7 @@ namespace CalculateSalaryAPIs.Controllers
 		private readonly ITaxCache _taxMemoryCache;
 		private readonly IMapper _automapper;
 		private readonly ICalculateService _calculateService;
-		private IEnumerable<TaxPayerMng> _taxPayerCache;
+		private readonly IEnumerable<TaxPayerMng> _taxPayerCache;
 
 		public TaxController(ICalculateService calculateService, ITaxCache testChache, IMapper automapper)
 		{
