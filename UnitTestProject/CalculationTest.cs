@@ -8,7 +8,7 @@ namespace UnitTestProject
     [TestClass]
 	public class CalculationTest : BaseTest
 	{
-		private TaxController _objUnderTest;
+		private readonly TaxController _objUnderTest;
 
 		public CalculationTest()
 		{
